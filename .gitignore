@@ -6,3 +6,6 @@ config.gypi
 /src/archive/
 /dist/archive/
 .DS_Store.DS_Store
+.env
+.env.local
+.env.production
