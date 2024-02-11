@@ -13,9 +13,7 @@ data:
       nodes:
         '[ECtteSLdMxsPGFVFY6oM8]:text "Text"':
           data:
-            text: You are ChatGPT, but running inside a Rivet Graph. Rivet is a visual
-              programming tool for interactions with LLMs. Let the user know
-              about that!
+            text: "Tell me something funny. "
           outgoingConnections:
             - output->"Prompt" hWLNO4XDZO9XPXIDGVjga/input
           visualData: 345.2716928515801/39.49413157421887/330/45//
@@ -51,6 +49,7 @@ data:
             top_p: 1
             useAsGraphPartialOutput: true
             useFrequencyPenaltyInput: false
+            useHeadersInput: false
             useMaxTokensInput: false
             useModelInput: false
             usePresencePenaltyInput: false
@@ -62,8 +61,68 @@ data:
             useUseTopPInput: false
             useUserInput: false
           visualData: 835.1097899549993/313.8617381627201/230/32//
+    ch3MMhpleLkhgWdGMpmV8:
+      metadata:
+        description: ""
+        id: ch3MMhpleLkhgWdGMpmV8
+        name: start
+      nodes:
+        '[DKIXT6HqB6Bll1P1SaaqB]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: "{{input}}"
+            type: system
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Output (Chat)" jssUl1ALGxZCmm4DO4We4/systemPrompt
+          visualData: 389.2797533784723/243.3127158681644/280/43//
+        '[VwlUi8jsxNFoI6gjsDmU8]:text "Text"':
+          data:
+            text: "You are Ava. You answer in 3 sentences. "
+          outgoingConnections:
+            - output->"Prompt" DKIXT6HqB6Bll1P1SaaqB/input
+          visualData: 345.2716928515801/39.49413157421887/330/45//
+        '[jssUl1ALGxZCmm4DO4We4]:chat "Output (Chat)"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            headers: []
+            maxTokens: 1024
+            model: gpt-3.5-turbo
+            parallelFunctionCalling: true
+            presencePenalty: 0
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useHeadersInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          visualData: 835.1097899549993/313.8617381627201/230/32//
+        '[rSdyNCKiHzn1VVFg90K0V]:graphInput "Graph Input"':
+          data:
+            dataType: chat-message[]
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Output (Chat)" jssUl1ALGxZCmm4DO4We4/prompt
+          visualData: 351.95598246174876/489.9382502904898/330/64/var(--node-color-3)/var(--grey-darkish)
   metadata:
     description: Example to run via rivet-node
     id: vHpwmvjUYbE-MQJ7H_sV_
+    mainGraphId: 7csOhbXu44Jps1V4znQpl
     title: Example project
-  plugins: []
+  plugins:
+    - id: openai
+      name: OpenAI
+      type: built-in

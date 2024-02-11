@@ -3,7 +3,7 @@
     "servers": [
       {
         "file": "./example.rivet-project",
-        "graphName": "chat-history",
+        "graphName": "start",
         "graphInputName": "input",
         "streamingOutput": {
           "nodeType": "chat",
