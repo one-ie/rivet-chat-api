@@ -5,3 +5,4 @@ example.rivet-project
 config.gypi
 /src/archive/
 /dist/archive/
+.DS_Store
