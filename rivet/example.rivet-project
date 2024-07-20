@@ -11,6 +11,15 @@ data:
         id: 7csOhbXu44Jps1V4znQpl
         name: "#main"
       nodes:
+        '[CgEvOoy7Bwy6DsXV9s3aC]:writeFile "Write File"':
+          data:
+            baseDirectory: ""
+            content: ""
+            path: ""
+            useBaseDirectoryInput: true
+            useContentInput: true
+            usePathInput: true
+          visualData: 1189.7364865821369/425.6331041104544/230/null//
         '[ECtteSLdMxsPGFVFY6oM8]:text "Text"':
           data:
             text: You are ChatGPT, but running inside a Rivet Graph. Rivet is a visual
@@ -26,7 +35,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"output" t3d6sXbFk0i9EkAgvd37R/prompt
-          visualData: 351.95598246174876/489.9382502904898/330/64/var(--node-color-3)/var(--grey-darkish)
+          visualData: 409.89353969738573/512.4695225487931/330/70/var(--node-color-3)/var(--grey-darkish)
         '[t3d6sXbFk0i9EkAgvd37R]:chat "output"':
           data:
             cache: false
@@ -58,4 +67,8 @@ data:
     id: vHpwmvjUYbE-MQJ7H_sV_
     mainGraphId: 7csOhbXu44Jps1V4znQpl
     title: Example project
-  plugins: []
+  plugins:
+    - id: rivet-plugin-fs@latest
+      package: rivet-plugin-fs
+      tag: latest
+      type: package

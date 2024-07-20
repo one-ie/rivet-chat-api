@@ -1,5 +1,15 @@
 const pluginConfigurations = [
     {
+        envVar: 'FS_PLUGIN',
+        importPath: 'rivet-plugin-fs',
+        isBuiltIn: false,
+        registerFunction: (plugin, Rivet) => Rivet.globalRivetNodeRegistry.registerPlugin(plugin(Rivet)),
+        settings: {
+            envVarPrefix: 'FS',
+            settingsKey: 'FS',
+        },
+    },
+    {
         envVar: 'CHROMADB_PLUGIN',
         importPath: 'rivet-plugin-chromadb',
         isBuiltIn: false,
