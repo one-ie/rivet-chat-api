@@ -8,3 +8,4 @@ yarn.lock
 /rivet/test*
 .DS_Store
 .env
+.env.local

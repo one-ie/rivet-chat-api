@@ -1,9 +1,19 @@
 import * as Rivet from '@ironclad/rivet-node';
 import fs from 'fs/promises';
 import path from 'path';
+
+import rivetMongoDbPlugin from 'rivet-plugin-mongodb';
+Rivet.globalRivetNodeRegistry.registerPlugin(rivetMongoDbPlugin(Rivet));
+import RivetPluginFs from 'rivet-plugin-fs';
+Rivet.globalRivetNodeRegistry.registerPlugin(RivetPluginFs(Rivet));
+// import anthropicPlugin from '@ironclad/rivet-node';
+// Rivet.globalRivetNodeRegistry.registerPlugin(RivetAnthropic(Rivet));
+
+
 import { setupPlugins, logAvailablePluginsInfo } from './pluginConfiguration.js';
 import { delay } from './utils.js';
 import event from 'events';
+
 
 logAvailablePluginsInfo();
 event.setMaxListeners(100);

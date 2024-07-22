@@ -19,6 +19,15 @@ data:
           outgoingConnections:
             - output->"output" t3d6sXbFk0i9EkAgvd37R/systemPrompt
           visualData: 354.23413061499997/308.36726447681565/330/66//
+        '[KLvmtBF1riy3cE45GZkqx]:writeFile "Write File"':
+          data:
+            baseDirectory: ""
+            content: hi
+            path: hello.txt
+            useBaseDirectoryInput: true
+            useContentInput: true
+            usePathInput: false
+          visualData: 1202.6114993011672/279.1798344314831/230/71//
         '[NOaDQSTgVr8lJoGjPetSo]:graphInput "Graph Input"':
           data:
             dataType: chat-message[]
@@ -27,6 +36,12 @@ data:
           outgoingConnections:
             - data->"output" t3d6sXbFk0i9EkAgvd37R/prompt
           visualData: 409.89353969738573/512.4695225487931/330/70/var(--node-color-3)/var(--grey-darkish)
+        '[rCoUBKLbkgWzUPxNkeYsy]:text "Text"':
+          data:
+            text: /Users/toc/Server/ONE/production/deep-chat
+          outgoingConnections:
+            - output->"Write File" KLvmtBF1riy3cE45GZkqx/baseDirectory
+          visualData: 830.8455070391632/167.32816143490612/330/72//
         '[t3d6sXbFk0i9EkAgvd37R]:chat "output"':
           data:
             cache: false
@@ -52,6 +67,8 @@ data:
             useTopPInput: false
             useUseTopPInput: false
             useUserInput: false
+          outgoingConnections:
+            - response->"Write File" KLvmtBF1riy3cE45GZkqx/content
           visualData: 835.1097899549993/313.8617381627201/230/67//
   metadata:
     description: Example to run via rivet-node

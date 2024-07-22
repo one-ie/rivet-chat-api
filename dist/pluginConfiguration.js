@@ -2,11 +2,10 @@ const pluginConfigurations = [
     {
         envVar: 'FS_PLUGIN',
         importPath: 'rivet-plugin-fs',
-        isBuiltIn: false,
+        isBuiltIn: true,
         registerFunction: (plugin, Rivet) => Rivet.globalRivetNodeRegistry.registerPlugin(plugin(Rivet)),
         settings: {
             envVarPrefix: 'FS',
-            settingsKey: 'FS',
         },
     },
     {
