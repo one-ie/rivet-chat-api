@@ -1,13 +1,16 @@
 import * as Rivet from '@ironclad/rivet-node';
 import fs from 'fs/promises';
 import path from 'path';
-
+// import rivetAnthropicPlugin from '@ironclad/rivet-core';
+// Register the anthropic plugin with the Rivet global node registry
+// Rivet.globalRivetNodeRegistry.registerPlugin(rivetAnthropicPlugin(Rivet));
+// Assuming Rivet has a built-in method or property for the anthropic plugin, register it
+Rivet.globalRivetNodeRegistry.registerPlugin(Rivet.anthropicPlugin);
 import rivetMongoDbPlugin from 'rivet-plugin-mongodb';
 Rivet.globalRivetNodeRegistry.registerPlugin(rivetMongoDbPlugin(Rivet));
 import RivetPluginFs from 'rivet-plugin-fs';
 Rivet.globalRivetNodeRegistry.registerPlugin(RivetPluginFs(Rivet));
-// import anthropicPlugin from '@ironclad/rivet-node';
-// Rivet.globalRivetNodeRegistry.registerPlugin(RivetAnthropic(Rivet));
+import { anthropicPlugin } from '@ironclad/rivet-node';
 
 
 import { setupPlugins, logAvailablePluginsInfo } from './pluginConfiguration.js';

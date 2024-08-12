@@ -23,7 +23,7 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Assemble Prompt" 0nZv4C-oTY9HbeN7JETuB/message1
-          visualData: 616.0176030058614/519.5974731105401/280/98//
+          visualData: 594.0176030058614/359.59747311054014/280/107//
         '[ECtteSLdMxsPGFVFY6oM8]:text "Text"':
           data:
             text: >
@@ -823,7 +823,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Assemble Prompt" 0nZv4C-oTY9HbeN7JETuB/message2
-          visualData: 221.77861370651502/659.7009323914443/330/100/var(--node-color-3)/var(--grey-darkish)
+          visualData: 143.77861370651502/714.7009323914443/330/106/var(--node-color-3)/var(--grey-darkish)
         '[gWVjBS2wdoKXMp7pAdYO4]:chat "output"':
           data:
             cache: false
@@ -849,7 +849,7 @@ data:
             useUserInput: false
           outgoingConnections:
             - response->"Extract" wSsJWwf5dhfJkfTIQ491p/input
-          visualData: 1004/472/230/101//
+          visualData: 1040/483/230/108//
         '[rvj8DMIHV7_LGLYgJ8fTr]:writeFile "Write File"':
           data:
             baseDirectory: ""
@@ -862,29 +862,77 @@ data:
         '[wSsJWwf5dhfJkfTIQ491p]:extractMarkdownCodeBlocks "Extract"':
           outgoingConnections:
             - firstBlock->"Write File" rvj8DMIHV7_LGLYgJ8fTr/content
-          visualData: 1404/489/280/84//
+          visualData: 1360/532/280/102//
         '[xe_OSj0oilAyRc7QkhKsl]:text "Text"':
           data:
             text: /Users/toc/Server/ONE/production/one/src/routes/(pages)/siam
           outgoingConnections:
             - output->"Write File" rvj8DMIHV7_LGLYgJ8fTr/baseDirectory
           visualData: 1401.3609681456053/323.5408666570697/462.77356866500145/96//
+    92wvY8d5fF4cwzUa_-jPu:
+      metadata:
+        description: ""
+        id: 92wvY8d5fF4cwzUa_-jPu
+        name: sonnet
+      nodes:
+        '[5O9yfU195ldPMNI0lWM4p]:chatAnthropic "Chat (Anthropic)"':
+          data:
+            cache: false
+            enableToolUse: false
+            maxTokens: 1024
+            model: claude-instant-1
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useMaxTokensInput: false
+            useModelInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopKInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+          outgoingConnections:
+            - response->"Graph Output" ZKB_X5smkVN4XhqB7iEMD/value
+          visualData: 996/344/305/1//
+        '[KnK58SzTIJMSF_hCaVfOj]:text "Text"':
+          data:
+            text: you will help me solve problems
+          visualData: 471.0779220779221/277.33648170011804/330/4//
+        '[NZPm1Zx3OlWhciPnrmNK8]:assembleMessage "Assemble Message"':
+          data:
+            toolCallId: ""
+            type: user
+            useToolCallIdInput: false
+            useTypeInput: false
+          outgoingConnections:
+            - message->"Chat (Anthropic)" 5O9yfU195ldPMNI0lWM4p/prompt
+          visualData: 782.3514853341964/643.4766329850385/280/7//
+        '[ZKB_X5smkVN4XhqB7iEMD]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1476.023310462515/393.54092720662703/330/null//
+        '[yuDOy9q9qxitz5ASzRqqs]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Assemble Message" NZPm1Zx3OlWhciPnrmNK8/part1
+          visualData: 457.8499949122467/460.749709022329/330/6//
     Du4AYFCZrSzI0BXHNW4jR:
       metadata:
         description: ""
         id: Du4AYFCZrSzI0BXHNW4jR
-        name: "#main (Copy)"
+        name: anthropic
       nodes:
-        '[3pNCvM9n-6tjrVVS_jtSm]:text "Text"':
-          data:
-            text: claude-3-5-sonnet-20240620
-          outgoingConnections:
-            - output->"Chat (Anthropic)" V5w7bwi8sPIztnz_eqt1A/model
-          visualData: 923.0628881686376/215.9144692499742/330/97//
         '[7_MVU2Lhw-BcmfdPTycTu]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
-            - prompt->"Chat (Anthropic)" V5w7bwi8sPIztnz_eqt1A/prompt
-          visualData: 618/677/280/92//
+            - prompt->"Chat (Anthropic)" Om17OeMMKMsAHKQYfXpht/system
+          visualData: 693.4317970099384/626.7121353267078/280/124//
         '[AnDCSmXLa7oXSDaV6Zv3D]:graphInput "Graph Input"':
           data:
             dataType: chat-message[]
@@ -897,7 +945,7 @@ data:
             useDefaultValueInput: false
           outgoingConnections:
             - data->"Assemble Prompt" 7_MVU2Lhw-BcmfdPTycTu/message2
-          visualData: 221.77861370651502/659.7009323914443/330/100/var(--node-color-3)/var(--grey-darkish)
+          visualData: 130.8895450052292/660.8370457502105/330/125/var(--node-color-3)/var(--grey-darkish)
         '[KQQtSlwzqU9hw2GRaM57D]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -906,21 +954,23 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Assemble Prompt" 7_MVU2Lhw-BcmfdPTycTu/message1
-          visualData: 616.0176030058614/519.5974731105401/280/98//
+          visualData: 588.7849551451759/359.60566692901284/280/102//
         '[O-oIxKezx0GyZ2EPCiBL_]:extractMarkdownCodeBlocks "output"':
-          visualData: 1430.9934055964068/530.9897420388548/280/101//
-        '[V5w7bwi8sPIztnz_eqt1A]:chatAnthropic "Chat (Anthropic)"':
+          outgoingConnections:
+            - firstBlock->"Write File" acykhPco2wzYyu2WZcT4q/content
+          visualData: 1532.3753324083243/617.8934095592374/280/120//
+        '[Om17OeMMKMsAHKQYfXpht]:chatAnthropic "Chat (Anthropic)"':
           data:
             cache: false
             enableToolUse: false
-            maxTokens: 4024
-            model: claude-2
+            maxTokens: 1024
+            model: claude-3-5-sonnet-20240620
             stop: ""
             temperature: 0.5
             top_p: 1
             useAsGraphPartialOutput: true
             useMaxTokensInput: false
-            useModelInput: true
+            useModelInput: false
             useStop: false
             useStopInput: false
             useTemperatureInput: false
@@ -930,7 +980,7 @@ data:
             useUseTopPInput: false
           outgoingConnections:
             - response->"output" O-oIxKezx0GyZ2EPCiBL_/input
-          visualData: 998/469/305/82//
+          visualData: 1118.158785406922/669.0737692534011/305/null//
         '[ZmStljpKoF0aKQp2DyQOy]:text "Text"':
           data:
             text: >
@@ -1717,15 +1767,35 @@ data:
               Create Svelte code when you get the detailed instructions.
           outgoingConnections:
             - output->"Prompt" KQQtSlwzqU9hw2GRaM57D/input
-          visualData: 225.4391559871338/286.9924197442707/330/99//
+          visualData: 53.21356581639046/150.2852205828607/330/119//
+        '[acykhPco2wzYyu2WZcT4q]:writeFile "Write File"':
+          data:
+            baseDirectory: ""
+            content: ""
+            path: +page.svelte
+            useBaseDirectoryInput: true
+            useContentInput: true
+            usePathInput: false
+          visualData: 2023.340349526183/579.8128094583074/230/121//
+        '[okxj-bkPnNvoajx6Hb4OH]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: write a simple sveltekit page
+            type: user
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Chat (Anthropic)" Om17OeMMKMsAHKQYfXpht/prompt
+          visualData: 717.1130646374166/894.1119636663839/280/123//
         '[xxeE5__H6ipD9Uz5Tor2C]:text "Text"':
           data:
-            text: /Users/toc/Server/ONE/production/one/src/routes/(pages)/siam
-          visualData: 1401.3609681456053/323.5408666570697/330/96//
+            text: /Users/toc/Server/ONE/production/one/src/routes/test
+          outgoingConnections:
+            - output->"Write File" acykhPco2wzYyu2WZcT4q/baseDirectory
+          visualData: 1458.8881569372666/342.30608783721436/529.8291627851554/122//
   metadata:
     description: Example to run via rivet-node
     id: vHpwmvjUYbE-MQJ7H_sV_
-    mainGraphId: 7csOhbXu44Jps1V4znQpl
+    mainGraphId: 92wvY8d5fF4cwzUa_-jPu
     title: ONE
   plugins:
     - id: rivet-plugin-fs@latest

@@ -1,0 +1,51 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    Inj5IHRgE6c0nGOrt-kB9:
+      metadata:
+        description: ""
+        id: Inj5IHRgE6c0nGOrt-kB9
+        name: Untitled Graph
+      nodes:
+        '[V69WTkJtpCSQDNg1q6vbB]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          visualData: 605/300/230/2//
+        '[ejVNYhJV2ZnPbBI6y86cH]:graphInput "Graph Input"':
+          data:
+            dataType: string
+            id: input
+            useDefaultValueInput: false
+          outgoingConnections:
+            - data->"Chat" V69WTkJtpCSQDNg1q6vbB/prompt
+          visualData: 153/367/330/3//
+  metadata:
+    description: ""
+    id: GBk3tMYoPky3SkjARKpzu
+    title: Builder
+  plugins: []
