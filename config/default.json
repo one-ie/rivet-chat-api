@@ -1,7 +1,7 @@
 {
     "servers": [
       {
-        "file": "./rivet/example.rivet-project",
+        "file": "./rivet/one.rivet-project",
         "graphName": "chat-history",
         "graphInputName": "input",
         "streamingOutput": {
@@ -13,7 +13,7 @@
         "port": 3100
       },
       {
-        "file": "./rivet/example2.rivet-project",
+        "file": "./rivet/one.rivet-project",
         "graphName": "other_graph",
         "graphInputName": "input",
         "streamingOutput": {
