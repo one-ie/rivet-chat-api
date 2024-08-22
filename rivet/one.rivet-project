@@ -33,14 +33,6 @@ data:
           outgoingConnections:
             - output->"Assemble Prompt" 0nZv4C-oTY9HbeN7JETuB/message1
           visualData: 594.0176030058614/359.59747311054014/280/107//
-        '[C6nNAul3ufpES6bTm_izJ]:getGlobal "Get Global"':
-          data:
-            dataType: string
-            id: server
-            onDemand: true
-            useIdInput: false
-            wait: false
-          visualData: 1072.0506538122343/345.5176779669081/230/null//
         '[ECtteSLdMxsPGFVFY6oM8]:text "ONE"':
           data:
             text: >-
@@ -246,9 +238,7 @@ data:
             defaultValue: server
             id: input
             useDefaultValueInput: false
-          outgoingConnections:
-            - data->"Write File" rvj8DMIHV7_LGLYgJ8fTr/baseDirectory
-          visualData: 1326.9810994184388/350.26056997818637/330/167//
+          visualData: 1073.508683627776/-104.11220499470562/330/170//
         '[NOaDQSTgVr8lJoGjPetSo]:graphInput "Graph Input"':
           data:
             dataType: chat-message[]
@@ -260,7 +250,7 @@ data:
             text: ""
             useDefaultValueInput: false
           outgoingConnections:
-            - data->"Assemble Prompt" 0nZv4C-oTY9HbeN7JETuB/message2
+            - data->"Assemble Prompt" 0nZv4C-oTY9HbeN7JETuB/message3
           visualData: 147.22802331559842/886.5277965761545/330/161/var(--node-color-3)/var(--grey-darkish)
         '[eJ5ygdcaJSjxl4NRU4M8u]:readFile "Read File"':
           data:
@@ -268,6 +258,8 @@ data:
             errorOnMissingFile: false
             path: /Users/toc/Server/ONE/production/one/src/routes/+page.svelte
             usePathInput: true
+          outgoingConnections:
+            - content->"Assemble Prompt" 0nZv4C-oTY9HbeN7JETuB/message2
           visualData: 160.25343762274264/638.7603870574704/280/159//
         '[gWVjBS2wdoKXMp7pAdYO4]:chat "output"':
           data:
@@ -312,7 +304,9 @@ data:
         '[xe_OSj0oilAyRc7QkhKsl]:text "Text"':
           data:
             text: /Users/toc/Server/ONE/production/one/src/routes/xo
-          visualData: 927.0542630311082/176.0562464508907/462.77356866500145/166//
+          outgoingConnections:
+            - output->"Write File" rvj8DMIHV7_LGLYgJ8fTr/baseDirectory
+          visualData: 1195.5472664241806/296.2209472701679/462.77356866500145/171//
     92wvY8d5fF4cwzUa_-jPu:
       metadata:
         description: ""
@@ -2058,6 +2052,43 @@ data:
           outgoingConnections:
             - output->"Write File" acykhPco2wzYyu2WZcT4q/baseDirectory
           visualData: 1458.8881569372666/342.30608783721436/529.8291627851554/122//
+    PUQVoIYZwZcLoSKxMbAwP:
+      metadata:
+        description: ""
+        id: PUQVoIYZwZcLoSKxMbAwP
+        name: test
+      nodes:
+        '[AT2JQw_DWvRGDRR9gKupr]:chat "Chat"':
+          data:
+            additionalParameters: []
+            cache: false
+            enableFunctionUse: false
+            maxTokens: 1024
+            model: gpt-4o-mini
+            parallelFunctionCalling: true
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAdditionalParametersInput: false
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          visualData: 937/333/230/1//
+        '[BxO3mU_Q2DqfS98zyNQ0J]:text "Text"':
+          data:
+            text: say hi
+          outgoingConnections:
+            - output->"Chat" AT2JQw_DWvRGDRR9gKupr/prompt
+          visualData: 428/350/330/2//
   metadata:
     description: Example to run via rivet-node
     id: vHpwmvjUYbE-MQJ7H_sV_
